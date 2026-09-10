@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills | Jacob Yusufov</title>
+<meta name="description" content="Free, installable Claude skills by Jacob Yusufov. Marketing and campaign methodology built on target audience analysis.">
+<link rel="canonical" href="https://jacobyusufov.com/skills.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skills | Jacob Yusufov">
+<meta property="og:description" content="Free, installable Claude skills built on real influence methodology.">
+<meta property="og:url" content="https://jacobyusufov.com/skills.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231D1F1A'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23C6A840' font-family='Georgia,serif'%3EJY%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F2F1EB;
+    --ink: #1D1F1A;
+    --muted: #5A5F50;
+    --line: #D9D7CA;
+    --brass: #8A6D1F;
+    --card: #EBE9DF;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #171912;
+      --ink: #E8E6DB;
+      --muted: #A8AB9B;
+      --line: #32352B;
+      --brass: #C6A840;
+      --card: #1E211A;
+    }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.6;
+    padding-inline: 24px;
+    padding-block: 0 96px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 18px;
+    border-bottom: 1px solid var(--line);
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .topbar .dot { color: var(--brass); }
+  .topbar a { color: var(--muted); text-decoration: none; }
+  .topbar a:hover { color: var(--brass); }
+
+  .hero { padding-block: 72px 48px; }
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+    text-wrap: balance;
+    max-width: 18ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--brass); }
+  .hero .lede { font-size: 1.16rem; color: var(--muted); max-width: 52ch; margin: 0; }
+
+  section { padding-block: 48px 8px; }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 34px;
+  }
+  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .skill {
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 32px 32px 36px;
+  }
+  .skill h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .skill .tag {
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display: block;
+    margin-bottom: 18px;
+  }
+  .skill p { margin: 0 0 16px; max-width: 60ch; }
+  .skill p:last-of-type { margin-bottom: 26px; }
+  .contents {
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin: 0 0 26px;
+  }
+  .btnrow { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .btn.primary { color: var(--paper); background: var(--ink); }
+  .btn.primary:hover { background: var(--brass); }
+  .btn.ghost { color: var(--ink); border: 1px solid var(--ink); }
+  .btn.ghost:hover { border-color: var(--brass); color: var(--brass); }
+  .btn:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  .install h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .install p { max-width: 62ch; margin: 0 0 20px; }
+  code {
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 0.85em;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 1px 6px;
+  }
+
+  .coming p { max-width: 62ch; margin: 0; color: var(--muted); }
+
+  footer {
+    margin-top: 96px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <span><a href="index.html">Jacob Yusufov</a> <span class="dot">&middot;</span> Skills</span>
+    <span><a href="index.html">Home</a></span>
+  </div>
+
+  <div class="hero">
+    <h1>Skills, in the <em>installable</em> sense.</h1>
+    <p class="lede">Instruction sets that teach Claude a working method. Built from the same discipline I use professionally, free to download, free to use, with the source on GitHub.</p>
+  </div>
+
+  <section>
+    <div class="eyebrow">Available now</div>
+    <div class="skill">
+      <h2>Campaign Architect</h2>
+      <span class="tag">Marketing &middot; Campaign planning &middot; v1</span>
+      <p>Builds a campaign brief the way influence professionals build one. Objectives written as countable behaviors instead of "awareness." An audience analysis that starts from what people do today and why. A susceptibility score that decides whether to spend on media or fix the offer. A staged series with go/no-go gates, a pretest plan, and evaluation against a baseline.</p>
+      <p>It also carries a hard ethical floor: no deception, no fear framing, no manufactured urgency, no claim your audience can refute with a screenshot. Point it at a new campaign for a full brief, or paste an existing plan and it runs the audit checklist instead.</p>
+      <div class="contents">SKILL.md &nbsp;/&nbsp; full seven-phase method &nbsp;/&nbsp; worked example &nbsp;/&nbsp; appeals &amp; techniques reference &nbsp;/&nbsp; 6 working templates</div>
+      <div class="btnrow">
+        <a class="btn primary" href="downloads/campaign-architect.zip" download>Download .zip</a>
+        <a class="btn ghost" href="https://github.com/jakovskyy/skills">Source on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="install">
+    <div class="eyebrow">How to install</div>
+    <h3>Claude (web and desktop)</h3>
+    <p>Download the zip, then add it as a skill in Claude's settings under capabilities. Once it's enabled, Claude uses it automatically whenever you plan or review a campaign.</p>
+    <h3>Claude Code</h3>
+    <p>Unzip into <code>.claude/skills/</code> inside your project, or <code>~/.claude/skills/</code> to make it available everywhere. Invoke it directly with <code>/campaign-architect</code> or just describe the campaign you're planning.</p>
+  </section>
+
+  <section class="coming">
+    <div class="eyebrow">In the works</div>
+    <p>Next up: skills for real estate marketing, listing copy that stays fair-housing compliant, and target audience analysis as a standalone method. Watch the GitHub repo to catch releases.</p>
+  </section>
+
+  <footer>
+    <span>Jacob Yusufov</span>
+    <span>Brooklyn, NY</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
