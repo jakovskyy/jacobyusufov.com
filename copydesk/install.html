@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install · Copy Desk</title>
+<meta name="description" content="Install Copy Desk into Claude Code, Cowork, or any agent that reads SKILL.md. It is a folder, with no account and no server.">
+<link rel="canonical" href="https://jacobyusufov.com/copydesk/install.html">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark"></span>Copy Desk</a>
+    <nav class="nav">
+      <a href="index.html">The desk</a>
+      <a href="install.html" class="on">Install</a>
+      <a href="packs.html">Packs</a>
+      <a href="https://github.com/jakovskyy/skills">Source</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap narrow">
+    <p class="eyebrow">Install</p>
+    <h1 style="margin-top:14px;font-size:clamp(30px,4vw,44px)">Copy Desk is a folder.</h1>
+    <p class="lead" style="max-width:60ch">You put it where your AI looks for skills, tell it who you are and who your clients are, and it renders your first desk. There is no account and no server. Everything it writes stays on your machine as markdown.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <ol class="steps">
+      <li>
+        <h3>Install the plugin</h3>
+        <p>Pick the one that matches how you work. All three install the same folder, and everything released so far comes with it: the blog pack and the templates for writing your own. Industry packs install the same way when they ship: a pack is a folder you drop into <span class="mono">packs/</span>.</p>
+        <p style="margin-top:14px"><b>Claude Code.</b> From any project:</p>
+        <pre class="cmd"><span class="c"># add the marketplace once, then install</span>
+/plugin marketplace add jakovskyy/skills
+/plugin install copydesk</pre>
+        <p style="margin-top:14px"><b>Claude Cowork and claude.ai.</b> Download the plugin from the Source link above and add it under Settings, Capabilities, Plugins. Claude loads it when a client, a sweep or a campaign comes up.</p>
+        <p style="margin-top:14px"><b>Codex, OpenClaw and any agent that reads SKILL.md.</b> Copy the <span class="mono">copydesk</span> folder into wherever your agent keeps its skills. You get the skills. The slash commands are Claude-specific and will not appear, so you ask in plain words instead.</p>
+      </li>
+      <li>
+        <h3>Run setup once</h3>
+        <p>Say <span class="mono">/copydesk setup</span>, or just "set up my copy desk." It asks ten questions from Campaign Architect's house-rules template: what you do, who you work for, the words you never use, who approves what. It writes <span class="mono">~/copydesk/copydesk.md</span> from the answers. Ten minutes, and it never asks again.</p>
+      </li>
+      <li>
+        <h3>Add a client</h3>
+        <p><span class="mono">/copydesk client sendwell</span>, or "add a client called Sendwell." It creates the folder, writes the client's <span class="mono">house-rules.md</span> from a short intake, and starts the client on the blog pack. When industry packs ship, a client declares them in <span class="mono">house-rules.md</span>. Point it at the client's live site and it seeds the upkeep log with every page it can find.</p>
+        <pre class="cmd">~/copydesk/
+├── copydesk.md            who you are, your packs, your model tiers
+├── clients/
+│   └── sendwell/
+│       ├── house-rules.md
+│       ├── brand/           voice.md · words.md · claims.md
+│       ├── upkeep/          one file per published piece
+│       ├── pipeline.md
+│       ├── campaigns/       one file per brief
+│       ├── schedule.md
+│       └── programs/
+└── desk.html              rendered, regenerate any time</pre>
+      </li>
+      <li>
+        <h3>Render the desk</h3>
+        <p><span class="mono">/copydesk</span>, or "show me the desk." It reads every file, renders <span class="mono">desk.html</span>, and opens it. The ribbon at the top says how many files it read and when. Nothing is sent anywhere. Close it, edit any file by hand, render again.</p>
+      </li>
+      <li>
+        <h3>Let the agents work</h3>
+        <p>"Run the fact sweep on Sendwell" has the upkeep agent check every figure, date and SEO field on every live piece against the facts file, and flag what changed. "Rules pass on Sendwell" has it reread the pieces against the words, claims and register rules. "Brief a campaign to get more trial stores printing a first label" hands the question to Campaign Architect. Each run tells you which model tier it wants before it starts, and nothing is changed until you approve it.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section rule">
+  <div class="wrap narrow">
+    <p class="eyebrow">Questions</p>
+    <h2 style="margin:10px 0 18px">Before you install.</h2>
+    <p><b>Does anything leave my machine?</b> No. The plugin is files. Your AI reads them and writes them. The only network traffic is whatever your AI already does to answer you.</p>
+    <p><b>What does it cost?</b> Nothing. The plugin, the blog pack and the pack templates are free and open source. Some future industry packs may be paid. The desk itself will not be.</p>
+    <p><b>Can I use it with clients in different industries?</b> Yes. Each client folder declares its own packs. A brokerage and a SaaS company sit side by side in the same desk.</p>
+    <p><b>What if I do not use Claude?</b> The skills work in any agent that reads SKILL.md. The slash commands do not. The dashboard renders the same either way.</p>
+    <p><b>Can I edit the files by hand?</b> That is the point. They are markdown. Edit them in anything and render again.</p>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div>Copy Desk · free, open source, runs on your machine</div>
+    <div><a href="https://jacobyusufov.com/skills.html">Skills by Jacob Yusufov</a> · <a href="https://github.com/jakovskyy/skills">GitHub</a></div>
+  </div>
+</footer>
+</body>
+</html>

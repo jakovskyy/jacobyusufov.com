@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Packs · Copy Desk</title>
+<meta name="description" content="Packs for Copy Desk: the rules that change when the industry does. The blog pack and the pack templates ship with the plugin; industry packs are in the works.">
+<link rel="canonical" href="https://jacobyusufov.com/copydesk/packs.html">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark"></span>Copy Desk</a>
+    <nav class="nav">
+      <a href="index.html">The desk</a>
+      <a href="install.html">Install</a>
+      <a href="packs.html" class="on">Packs</a>
+      <a href="https://github.com/jakovskyy/skills">Source</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap narrow">
+    <p class="eyebrow">Packs</p>
+    <h1 style="margin-top:14px;font-size:clamp(30px,4vw,44px)">The rules that change when the industry does.</h1>
+    <p class="lead" style="max-width:60ch">A pack is a folder of rules for one industry: the claims that need proof, the words that are off limits, the regulator who is reading. Upkeep, pipeline, brand and campaigns work the same for every client. The pack is the part that changes. A client declares its packs, and the upkeep agent reads them on every fact sweep and rules pass, the same way Campaign Architect reads them when it writes a brief.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="packs-grid">
+      <div class="pack">
+        <div class="top"><h3>Blog</h3><span class="price">Default · with the plugin</span></div>
+        <p>The simplest pack, and the one every new client starts on. General blog and content work has no regulator, so the rules are the ones any good editor enforces.</p>
+        <ul>
+          <li>Every figure, date and name needs a source or comes out</li>
+          <li>SEO fields on every piece, checked on the same sweep as the copy</li>
+          <li>Claims hygiene: superlatives need proof, comparisons show both numbers</li>
+          <li>One register: the reader</li>
+        </ul>
+      </div>
+      <div class="pack dim">
+        <div class="top"><h3>Real estate</h3><span class="price soon">In the works · ships first</span></div>
+        <p>Written from daily practice inside a real estate technology company. For brokerages, agents, title companies, lenders and the proptech that serves them.</p>
+        <ul>
+          <li>Fair housing language pass, with the words and the reasons</li>
+          <li>RESPA claims: what a page may say about referrals, sponsorships and who pays</li>
+          <li>FTC substantiation: every figure needs a source or comes out</li>
+          <li>State license disclosure rules, New York and New Jersey first</li>
+          <li>Registers: consumer, agent, lender, attorney, and what each may be told</li>
+          <li>A worked example: a full workspace for a fictional brokerage</li>
+        </ul>
+      </div>
+      <div class="pack dim">
+        <div class="top"><h3>SaaS, B2B</h3><span class="price soon">In the works</span></div>
+        <p>Light by design: most SaaS copy has no regulator, only a customer who can check.</p>
+        <ul>
+          <li>Comparison and competitor claims: dated sources, monthly recheck</li>
+          <li>Pricing page upkeep: a trigger that fires when plans change</li>
+          <li>Savings and performance figures: shown or cut</li>
+          <li>Registers: buyer, user, finance</li>
+        </ul>
+      </div>
+      <div class="pack dim">
+        <div class="top"><h3>Health and wellness</h3><span class="price soon">In the works</span></div>
+        <p>FTC health claims, FDA structure and function language, testimonial rules, and the disclaimers that always appear.</p>
+      </div>
+      <div class="pack dim">
+        <div class="top"><h3>Financial services</h3><span class="price soon">In the works</span></div>
+        <p>FINRA and SEC advertising rules, performance claims, "guaranteed" and its cousins, required disclosures by product.</p>
+      </div>
+      <div class="pack">
+        <div class="top"><h3>Write your own</h3><span class="price">Templates included · your AI helps</span></div>
+        <p>A pack is six files in a folder, and the templates for all six ship with the plugin. You do not have to fill them out alone: ask your AI to interview you about the industry, and it drafts the pack from your answers, one file at a time, for you to correct. If you know an industry's rules well enough to answer questions about them, you can ship a pack.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section rule">
+  <div class="wrap narrow">
+    <p class="eyebrow">How a pack works</p>
+    <h2 style="margin:10px 0 18px">A pack is six files, read after the client's own rules.</h2>
+    <pre class="cmd">packs/blog/
+├── pack.md            what it covers, who regulates it, version
+├── rules-passes/      the checks a rules pass runs
+├── glossary.md        the words the industry uses, and the words it must not
+├── claims.md          claims that need proof, claims that are never made
+├── registers.md       who the audience is and what each may be told
+└── worked-example/    a full client workspace, filled in</pre>
+    <p style="margin-top:18px">A client's <span class="mono">house-rules.md</span> declares <span class="mono">packs: [blog]</span> today, and adds <span class="mono">packs: [real-estate]</span> the day that pack ships. On every pass, the client's own rules load first, then each pack. Rules passes are added together. Glossaries merge, and when a pack and the client disagree on a word, the client's choice is used. A claim any pack forbids stays forbidden. When two packs disagree on a rule, the desk lists the conflict as an item to resolve instead of deciding it quietly.</p>
+    <p>A new client starts on the blog pack, the simplest one, plus its own house rules. Declaring an industry pack adds the rules that industry answers for.</p>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div>Copy Desk · free, open source, runs on your machine</div>
+    <div><a href="https://jacobyusufov.com/skills.html">Skills by Jacob Yusufov</a> · <a href="https://github.com/jakovskyy/skills">GitHub</a></div>
+  </div>
+</footer>
+</body>
+</html>

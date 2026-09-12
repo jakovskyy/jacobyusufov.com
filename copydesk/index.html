@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Copy Desk</title>
+<meta name="description" content="A free plugin you install into your AI. It keeps every client's rules, brand, published copy and campaigns as plain files on your machine, and renders this dashboard from them.">
+<link rel="canonical" href="https://jacobyusufov.com/copydesk/">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark"></span>Copy Desk</a>
+    <nav class="nav">
+      <a href="index.html" class="on">The desk</a>
+      <a href="install.html">Install</a>
+      <a href="packs.html">Packs</a>
+      <a href="https://github.com/jakovskyy/skills">Source</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <p class="eyebrow">Free · Runs on your machine · Works in Claude Code and Cowork</p>
+        <h1 style="margin-top:14px">Every client, every rule, every piece of copy. One desk.</h1>
+        <p class="lead">Copy Desk is a free plugin you install into your AI. It keeps each client's rules, brand, published copy and campaigns as plain files on your computer, and renders the dashboard below from them. Nothing is hosted and nothing leaves your machine.</p>
+        <div class="btns">
+          <a class="btn primary" href="install.html">Install it</a>
+          <a class="btn" href="packs.html">See the packs</a>
+        </div>
+      </div>
+      <div class="facts">
+        <div><b>What you see below is the real thing.</b>A dashboard rendered for a fictional client, Sendwell, from thirty-eight markdown files. Click the tabs. Open a document.</div>
+        <div><b>One workspace per client.</b>A freelancer with four clients has four folders and one desk.</div>
+        <div><b>The agents do the work. You make the calls.</b>An upkeep agent keeps what is published accurate, and Campaign Architect writes the briefs. Every flag and every draft waits for your decision.</div>
+      </div>
+    </div>
+
+    <!-- ================= THE DESK ================= -->
+    <div class="desk-cue"><span class="live"><span class="pulse"></span>Live demo</span><span>Every row, card and tab below is clickable. Anything with a document behind it opens in the drawer.</span></div>
+    <div class="desk" id="desk">
+      <div class="mast">
+        <span class="dmark"></span>
+        <div><div class="dname">Copy Desk</div><div class="dtag">The copywriter's desk</div></div>
+        <div class="dclient">
+          <span class="dchip">client · <b>Sendwell</b></span>
+          <span class="dchip">packs · <b>blog</b></span>
+          <span class="dchip">Sisyphus 1.0 · Sep 2026</span>
+        </div>
+      </div>
+      <div class="ribbon">
+        <div><span class="dot"></span>Rendered from 38 files in <span class="k">~/copydesk/clients/sendwell</span></div>
+        <div><span class="k">Current as of</span> Sep 11, 2026 09:40</div>
+        <div><span class="k">Nothing leaves this machine</span></div>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-p="upkeep">Upkeep <span class="n">3 flagged</span></button>
+        <button class="tab" data-p="desk">Content Desk <span class="n">25</span></button>
+        <button class="tab" data-p="pipeline">Pipeline <span class="n">5</span></button>
+        <button class="tab" data-p="brand">Brand</button>
+        <button class="tab" data-p="campaigns">Campaigns <span class="n">3</span></button>
+        <button class="tab" data-p="scheduled">Runs</button>
+        <button class="tab" data-p="program">Program <span class="n">1 active</span></button>
+      </div>
+
+      <!-- UPKEEP -->
+      <div class="panel on" id="p-upkeep">
+        <p class="intro">Upkeep keeps the published library correct on two axes at once. Facts move: a plan price, a carrier list, a threshold. Rules move: a banned word, a claim the client no longer makes. Either one is a trigger, and everything the upkeep agent flags lands here and waits for your decision. The SEO record gets checked on the same pass as the copy.</p>
+        <span class="strip">● The fact sweep runs Mondays on its own. The rules pass runs on the first of the month. Last sweep: Sep 8.</span>
+        <div class="kpis">
+          <div class="kpi"><div class="v">20</div><div class="l">Live pieces</div></div>
+          <div class="kpi flag"><div class="v">3</div><div class="l">Flagged</div></div>
+          <div class="kpi warn"><div class="v">2</div><div class="l">In review</div></div>
+          <div class="kpi"><div class="v">1</div><div class="l">Revisions pending</div></div>
+          <div class="kpi good"><div class="v">14</div><div class="l">Complete</div></div>
+        </div>
+        <div class="bar">
+          <div class="row"><b>Rules pass coverage · September</b><span>14 of 20 pieces complete</span></div>
+          <div class="track"><div class="fill" style="width:70%"></div></div>
+        </div>
+        <div class="callout">
+          <h4>Three flags need a decision.</h4>
+          <p>The Monday sweep found the old $49 in three places on the pricing page, a stale competitor source on the comparison page, and a carrier count that missed DHL in onboarding email 3. Approve the fixes, modify them, or override. The rows below open the full documents.</p>
+        </div>
+        <table class="t">
+          <thead><tr><th>Piece</th><th>Surface</th><th>Trigger</th><th>Status</th><th>Checked</th><th class="note">What changed</th></tr></thead>
+          <tbody>
+            <tr class="row" data-doc="pricing"><td class="doc">Pricing page</td><td class="m">site</td><td><span class="trig"><b>B</b> fact · plan price</span></td><td><span class="st flagged">flagged</span></td><td class="m">Sep 9</td><td class="note">Growth plan went from $49 to $59 on Sep 8. The page still shows $49 in the table, in the FAQ, and in the meta description.</td></tr>
+            <tr class="row" data-doc="vs"><td class="doc">Sendwell vs. ShipStation</td><td class="m">site</td><td><span class="trig"><b>A</b> rule · claims</span></td><td><span class="st flagged">flagged</span></td><td class="m">Sep 9</td><td class="note">Competitor changed its per-label pricing. Every comparison claim on the page needs a fresh source or comes out.</td></tr>
+            <tr class="row" data-doc="email3"><td class="doc">Onboarding email 3 of 5</td><td class="m">email</td><td><span class="trig"><b>B</b> fact · carrier list</span></td><td><span class="st flagged">flagged</span></td><td class="m">Sep 9</td><td class="note">Names four carriers. DHL was added Aug 30.</td></tr>
+            <tr class="row" data-doc="returns"><td class="doc">How returns work</td><td class="m">help</td><td><span class="trig"><b>A</b> rule · refund window</span></td><td><span class="st review">in review</span></td><td class="m">Sep 4</td><td class="note">Refund window moved from 14 to 30 days. Whole article reread, draft in the drawer.</td></tr>
+            <tr class="row" data-doc="terms"><td class="doc">Terms summary</td><td class="m">site</td><td><span class="trig"><b>A</b> rule · refund window</span></td><td><span class="st review">in review</span></td><td class="m">Sep 4</td><td class="note">Same change. Legal reviews Thursday.</td></tr>
+            <tr class="row" data-doc="duties"><td class="doc">International duties</td><td class="m">help</td><td><span class="trig"><b>B</b> fact · threshold</span></td><td><span class="st revisions">revisions pending</span></td><td class="m">Sep 2</td><td class="note">EU low-value threshold figure corrected. Waiting on the ops lead to confirm the number.</td></tr>
+            <tr class="row" data-doc="home"><td class="doc">Home page</td><td class="m">site</td><td><span class="trig">none</span></td><td><span class="st approved">approved</span></td><td class="m">Sep 8</td><td class="note">Rules pass clean. No figures on the page.</td></tr>
+            <tr class="row" data-doc="perlabel"><td class="doc">Why we do not charge per label</td><td class="m">blog</td><td><span class="trig">none</span></td><td><span class="st complete">complete</span></td><td class="m">Sep 8</td><td class="note"></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PIPELINE -->
+      <div class="panel" id="p-pipeline">
+        <p class="intro">What is being written, for which surface, and where it stands. A piece moves from brief to draft to review to approved to live, and the rows below open the working documents.</p>
+        <table class="t">
+          <thead><tr><th>Piece</th><th>Surface</th><th>Stage</th><th>Due</th><th class="note">Next</th></tr></thead>
+          <tbody>
+            <tr class="row" data-doc="pl-landing"><td class="doc">Returns portal landing page</td><td class="m">site</td><td><span class="st">brief</span></td><td class="m">Sep 25</td><td class="note">Brief written from the campaign. Waiting on two screenshots from product.</td></tr>
+            <tr class="row" data-doc="pl-q4"><td class="doc">Q4 launch announcement</td><td class="m">email · blog</td><td><span class="st revisions">draft</span></td><td class="m">Sep 18</td><td class="note">Draft 2. The headline still leads with a feature. Rewrite to the behavior.</td></tr>
+            <tr class="row" data-doc="pl-marrow"><td class="doc">Customer story: Marrow Ceramics</td><td class="m">blog</td><td><span class="st review">review</span></td><td class="m">Sep 15</td><td class="note">Quote approval sent to the customer Sep 10.</td></tr>
+            <tr class="row" data-doc="pl-duties"><td class="doc">Help: international duties</td><td class="m">help</td><td><span class="st revisions">draft</span></td><td class="m">Sep 16</td><td class="note">One figure outstanding, see Upkeep.</td></tr>
+            <tr class="row" data-doc="pl-linkedin"><td class="doc">LinkedIn series: what shipping costs</td><td class="m">social</td><td><span class="st approved">approved</span></td><td class="m">Sep 22</td><td class="note">Six posts approved. Scheduling Tuesdays and Thursdays.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CONTENT DESK -->
+      <div class="panel" id="p-desk">
+        <p class="intro">The library itself. Every piece is one record: the copy, the SEO fields and the schema together in one markdown file. Click a record on the left and it opens in the editor, with its search and publishing state on the right. When a record passes every check, Publish writes the finished page with the meta tags and the JSON-LD in it.</p>
+        <div class="cd">
+          <div class="cd-lib">
+            <div class="cd-search">Search titles, slugs, keywords</div>
+            <div class="cd-chips"><span class="on">All 25</span><span>Published 18</span><span>Flagged 3</span><span>Draft 4</span></div>
+            <div class="cd-grp"><span>Site</span><span>4</span></div>
+            <button class="cd-rec sel" data-r="pricing"><div class="t1">Pricing page</div><div class="m1"><span class="st flagged">flagged</span> Sep 9</div></button>
+            <button class="cd-rec" data-r="vs"><div class="t1">Sendwell vs. ShipStation</div><div class="m1"><span class="st flagged">flagged</span> Sep 9</div></button>
+            <button class="cd-rec" data-r="home"><div class="t1">Home page</div><div class="m1"><span class="st approved">published</span> Sep 8</div></button>
+            <div class="cd-grp"><span>Help</span><span>2</span></div>
+            <button class="cd-rec" data-r="returns"><div class="t1">How returns work</div><div class="m1"><span class="st review">in review</span> Sep 4</div></button>
+            <div class="cd-grp"><span>Email</span><span>1</span></div>
+            <button class="cd-rec" data-r="email3"><div class="t1">Onboarding email 3 of 5</div><div class="m1"><span class="st flagged">flagged</span> Sep 9</div></button>
+            <div class="cd-grp"><span>Blog</span><span>2</span></div>
+            <button class="cd-rec" data-r="perlabel"><div class="t1">Why we do not charge per label</div><div class="m1"><span class="st approved">published</span> Jul 14</div></button>
+            <button class="cd-rec" data-r="marrow"><div class="t1">Customer story: Marrow Ceramics</div><div class="m1"><span class="st revisions">draft</span> Sep 10</div></button>
+            <p class="cd-note">Eighteen more records live in <span class="mono">upkeep/</span> as markdown files.</p>
+          </div>
+          <div class="cd-ed">
+            <div class="cd-toolbar"><span>B</span><span>I</span><span>H2</span><span>H3</span><span>List</span><span>Quote</span><span>Link</span><span style="margin-left:auto">Source</span></div>
+            <h2 id="cd-title"></h2>
+            <div class="cd-metaline" id="cd-meta"></div>
+            <div id="cd-body" class="cd-copy"></div>
+          </div>
+          <div class="cd-insp">
+            <div class="cd-itabs">
+              <button class="on" data-i="seo">SEO</button>
+              <button data-i="schema">Schema</button>
+              <button data-i="publishing">Publishing</button>
+              <button data-i="record">Record</button>
+            </div>
+            <div class="cd-ibody" id="cd-ibody"></div>
+            <button class="cd-pub" id="cd-pub"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRAND -->
+      <div class="panel" id="p-brand">
+        <p class="intro">The standing rules every piece is checked against, read from <span class="mono">brand/</span> and <span class="mono">house-rules.md</span>. When any of this changes, that is a Trigger A event and the rules pass rereads the library.</p>
+        <div class="two">
+          <div>
+            <div class="card open" data-doc="house"><h4>House rules</h4><p>Sendwell sells shipping and returns software to small online stores. Plain, specific, a little dry. Say the number. The store owner buys, the ops lead uses it, the accountant asks about it once a quarter.</p><div class="meta"><span>house-rules.md</span><span>updated <b>Aug 30</b></span><span class="go">open →</span></div></div>
+            <div class="card open" data-doc="voice" style="margin-top:12px"><h4>Voice</h4><p class="blockq">Write like the person who has printed ten thousand labels and is not impressed by any of them.</p><div class="meta"><span>brand/voice.md</span><span class="go">open →</span></div></div>
+          </div>
+          <div>
+            <div class="card open" data-doc="words"><h4>Words</h4><p>Preferred and banned. The rules pass checks every piece against this list.</p>
+              <div class="words"><span class="yes">label</span><span class="yes">order</span><span class="yes">store</span><span class="yes">carrier</span><span class="yes">rate</span><span class="no">seamless</span><span class="no">effortless</span><span class="no">supercharge</span><span class="no">unlock</span><span class="no">empower</span><span class="no">solution</span></div>
+              <div class="meta"><span>brand/words.md</span><span class="go">open →</span></div></div>
+            <div class="card open" data-doc="claims" style="margin-top:12px"><h4>Claims</h4>
+              <ul class="list">
+                <li><span class="k">Any delivery time</span><span class="v">needs a carrier source on the page</span></li>
+                <li><span class="k">Any savings figure</span><span class="v">needs the comparison shown</span></li>
+                <li><span class="k">"Cheapest," "guaranteed delivery"</span><span class="v">never</span></li>
+                <li><span class="k">Competitor pricing</span><span class="v">dated source, rechecked monthly</span></li>
+              </ul>
+              <div class="meta"><span>brand/claims.md</span><span class="go">open →</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAMPAIGNS -->
+      <div class="panel" id="p-campaigns">
+        <p class="intro">These briefs were written by Campaign Architect. Objectives are behaviors an observer can count, and the susceptibility score decides whether to spend on media or change the offer instead.</p>
+        <div class="cards">
+          <div class="card open" data-doc="camp1"><h4>Get 60 trial stores to print a first label within 48 hours</h4><p>Primary actors: store owners in trial. Key communicator: the Shopify app reviewer they already read. Series live, checkpoint 2 of 3.</p><div class="meta"><span>baseline <b>31 of 140</b> Aug</span><span>susceptibility <b>4</b></span><span>stage <b>live</b></span><span class="go">open →</span></div></div>
+          <div class="card open" data-doc="camp2"><h4>Get 25 Growth customers to switch on the returns portal</h4><p>Susceptibility 2. The audience has no reason to move, so this is an offer change and a product change, not a media buy. Pretest with six customers first.</p><div class="meta"><span>baseline <b>0</b></span><span>susceptibility <b>2</b></span><span>stage <b>pretest</b></span><span class="go">open →</span></div></div>
+          <div class="card open" data-doc="camp3"><h4>Get 12 customers to give a quote for a story page</h4><p>Evaluation stage. Nine quotes in, three pending. Log of everything else that moved the number is in the brief.</p><div class="meta"><span>baseline <b>2</b></span><span>susceptibility <b>5</b></span><span>stage <b>evaluation</b></span><span class="go">open →</span></div></div>
+        </div>
+      </div>
+
+      <!-- SCHEDULED -->
+      <div class="panel" id="p-scheduled">
+        <p class="intro">This is the upkeep agent's schedule. Some runs fire on a calendar and some fire when a file changes. Each one says which model tier it wants before it starts, and every flag it raises lands in Upkeep for you to decide.</p>
+        <span class="strip">● 5 runs tracked · 3 on a calendar, 2 on a file change · Next: rules pass, Oct 1</span>
+        <table class="t">
+          <thead><tr><th>Run</th><th>When</th><th>Tier</th><th>Last</th><th class="note">What it does</th></tr></thead>
+          <tbody>
+            <tr class="row" data-doc="sc-fact"><td class="doc">Fact sweep</td><td class="m">Mondays</td><td class="m">Fast</td><td class="m">Sep 8</td><td class="note">Every figure, name and date on every live piece, checked against the facts file. Trigger B flags.</td></tr>
+            <tr class="row" data-doc="sc-rules"><td class="doc">Rules pass</td><td class="m">1st of month</td><td class="m">Standard</td><td class="m">Sep 1</td><td class="note">Words, claims and register on every live piece. Trigger A flags.</td></tr>
+            <tr class="row" data-doc="sc-pricing"><td class="doc">Pricing page check</td><td class="m">on plan change</td><td class="m">Fast</td><td class="m">Sep 9</td><td class="note">Fires when pricing.md changes. Found the $49.</td></tr>
+            <tr class="row" data-doc="sc-comp"><td class="doc">Competitor recheck</td><td class="m">monthly</td><td class="m">Standard</td><td class="m">Sep 9</td><td class="note">Every comparison claim gets a fresh dated source or a flag.</td></tr>
+            <tr class="row" data-doc="sc-claims"><td class="doc">Claims review</td><td class="m">quarterly</td><td class="m">Strongest</td><td class="m">Jul 1</td><td class="note">Reads every claim as a journalist would. Next: Oct 1.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PROGRAM -->
+      <div class="panel" id="p-program">
+        <p class="intro">When a client has a big initiative, it gets its own folder and its own tab, called a program. Sendwell is launching a customer returns portal on Oct 7, so everything for that launch lives here: the brief, the copy, the email sequence, and the two product decisions the copy is waiting on. Read from <span class="mono">programs/returns-portal/</span>.</p>
+        <div class="kpis">
+          <div class="kpi"><div class="v">Oct 7</div><div class="l">Launch</div></div>
+          <div class="kpi"><div class="v">6</div><div class="l">Documents</div></div>
+          <div class="kpi"><div class="v">2</div><div class="l">Open decisions</div></div>
+        </div>
+        <div class="two">
+          <div>
+            <h4 class="eyebrow" style="margin-bottom:10px">Documents</h4>
+            <ul class="list">
+              <li class="row" data-doc="pr-brief"><span class="k">Launch brief</span><span class="v">approved · Sep 3</span></li>
+              <li class="row" data-doc="pl-landing"><span class="k">Landing page copy</span><span class="v">brief · Sep 25</span></li>
+              <li class="row" data-doc="pr-emails"><span class="k">Announcement email sequence (3)</span><span class="v">draft · Sep 18</span></li>
+              <li class="row" data-doc="pr-help"><span class="k">Help center: setting up the portal</span><span class="v">not started</span></li>
+              <li class="row" data-doc="pr-banner"><span class="k">In-app banner</span><span class="v">approved</span></li>
+              <li class="row" data-doc="pr-faq"><span class="k">FAQ</span><span class="v">draft</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="eyebrow" style="margin-bottom:10px">Open decisions</h4>
+            <ul class="list">
+              <li class="row" data-doc="pr-d1"><span class="k">Does the portal ship on Growth or on all plans? Decides the landing page headline and the email audience.</span><span class="v">product · by Sep 17</span></li>
+              <li class="row" data-doc="pr-d2"><span class="k">Is the returns fee shown before or after the customer chooses a carrier?</span><span class="v">product · by Sep 20</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section rule">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2 style="margin-top:10px;max-width:22ch">What the desk keeps track of</h2>
+    <div class="three">
+      <div><h3>One folder per client</h3><p>House rules, brand, the upkeep log, the pipeline, the campaign briefs. Plain markdown with a few lines of front matter. Open them in anything. Version them in git if you like.</p></div>
+      <div><h3>One pack per industry</h3><p>A pack is the rules that change when the industry does: the claims that need proof, the words that are banned, the regulations that apply. A client declares its packs, and the upkeep agent reads them on every pass, so the rules are followed and the facts stay accurate.</p></div>
+      <div><h3>Every piece keeps its record</h3><p>Because this is a copywriter's desk, a piece keeps its full working record and not just the prose. The SEO fields live in the front matter, and the same file carries the JSON-LD schema, the FAQ block that becomes FAQPage markup, and the llms.txt entry that tells AI search engines which page to cite. When an answer engine quotes your client, it quotes the page you chose.</p></div>
+    </div>
+    <div class="fields">
+      <span>title tag</span><span>meta description</span><span>focus keyword</span><span>canonical</span><span>schema type</span><span>FAQ block</span><span>llms.txt pillar</span><span>review-by date</span>
+    </div>
+  </div>
+</section>
+
+<section class="section rule">
+  <div class="wrap">
+    <p class="eyebrow">Who does the work</p>
+    <h2 style="margin-top:10px;max-width:22ch">Two agents and you</h2>
+    <div class="agents">
+      <div class="agent">
+        <div class="who"><span class="badge">U</span><h4>The upkeep agent</h4></div>
+        <p>The upkeep agent keeps everything you have already published accurate. When a rule changes, like a product name or a claim the client no longer makes, it rereads every piece against the new rules. That is the rules pass. When a fact changes, like a price or a carrier list, it finds the sentences that carry that fact and checks only those. That is the fact sweep.</p>
+        <p>It checks the SEO record the same way it checks the copy, because a meta description that still sells last quarter's offer is just as wrong as a paragraph that does.</p>
+      </div>
+      <div class="agent">
+        <div class="who"><span class="badge">C</span><h4>Campaign Architect</h4></div>
+        <p>Campaign Architect writes the campaign brief the way influence professionals write one. It sets objectives as behaviors you can count instead of awareness goals, and it analyzes the audience by starting from what those people already do and why. Then it scores how open they actually are to being moved, which tells you whether to spend on media or fix the offer instead.</p>
+        <p>It works under a hard ethical floor: no deception, no fear framing, no manufactured urgency, and no claim your audience can refute with a screenshot.</p>
+      </div>
+      <div class="agent you">
+        <div class="who"><span class="badge">✓</span><h4>You</h4></div>
+        <p>Everything the agents produce comes to you before it goes anywhere. You approve, modify or override every flag and every draft, and nothing is published, patched or retired without you.</p>
+        <p>The agents handle the checking and the analysis. The judgment stays yours, along with the client relationship and the byline.</p>
+      </div>
+    </div>
+    <table class="tiers">
+      <thead><tr><th>Job</th><th>Tier the desk recommends</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Fact sweep</td><td class="m">Fast</td><td>Mechanical, many files, little judgment.</td></tr>
+        <tr><td>Rules pass</td><td class="m">Standard</td><td>Pattern matching with some judgment.</td></tr>
+        <tr><td>Campaign brief</td><td class="m">Strongest available</td><td>The whole method rests on the analysis.</td></tr>
+        <tr><td>Render the desk</td><td class="m">Fast</td><td>It is a transform.</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px;color:var(--ink-2);font-size:14px;max-width:66ch">The desk recommends the tier and you decide what runs on what, the same way you decide on every flag and every draft.</p>
+  </div>
+</section>
+
+<section class="section rule">
+  <div class="wrap narrow">
+    <p class="eyebrow">Why it exists</p>
+    <h2 style="margin:10px 0 18px">One person, all the desks.</h2>
+    <p>Newsrooms solved content quality with a chain of desks. The writer filed, the editor shaped the story, the copy desk checked every name, figure and claim, the SEO editor handled search, and an editor in chief permitted the piece through. Then the industry spent a decade cutting those desks to save money, and the checks landed on whoever was left. Anyone writing for clients today works in that same condition: one person doing the work of every desk, with no chain behind them.</p>
+    <p>Copy Desk gives that chain back as checks one person can run, without a server, an account, or a subscription. Install it, add a client, and the first sweep tells you what is already wrong.</p>
+    <div class="btns" style="margin-top:22px;display:flex;gap:12px"><a class="btn primary" href="install.html">Install it</a><a class="btn pencil" href="https://jacobyusufov.com/skills.html">Built by a working copywriter</a></div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div>Copy Desk · free, open source, runs on your machine</div>
+    <div><a href="https://jacobyusufov.com/skills.html">Skills by Jacob Yusufov</a> · <a href="https://github.com/jakovskyy/skills">GitHub</a></div>
+  </div>
+</footer>
+
+<!-- DRAWER -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="dh"><span class="path" id="dpath"></span><button id="dclose">Close</button></div>
+  <div class="db" id="dbody"></div>
+</aside>
+
+<script>
+// Each document: path, title, front matter, then sections as [heading, html].
+const C='clients/sendwell/';
+const DOCS = {
+  pricing:{path:C+'upkeep/pricing-page.md',title:'Pricing page',fm:'surface: site\nstatus: flagged\ntrigger: B\nfact: plans.growth.price\nseo.meta_description: still carries $49\nlast_checked: 2026-09-09\nnext: fix the three places that carry the price, rerun the pricing check',s:[
+    ['What the sweep found','<p>pricing.md changed on Sep 8: Growth plan $49 to $59. The page carries the old figure three times: in the plan table, in the FAQ answer "What does Growth cost?", and in the meta description, which the sweep reads on the same pass as the body. Nothing else on the page carries a price, so this is a Trigger B fix, three places, not a reread.</p>'],
+    ['Rule check','<p>The FAQ sentence "less than a coffee a day" is a comparison claim with no source. It fails claims.md and comes out with the price fix.</p>']]},
+  vs:{path:C+'upkeep/sendwell-vs-shipstation.md',title:'Sendwell vs. ShipStation',fm:'surface: site\nstatus: flagged\ntrigger: A\nrule: claims.competitor-pricing\nlast_checked: 2026-09-09\nnext: fresh dated source for every comparison row, or the row comes out',s:[
+    ['Why it is Trigger A','<p>The competitor changed its per-label pricing on Sep 3. Under house rules, competitor pricing claims need a dated source rechecked monthly. Every row of the comparison table is a claim, so the whole page is reread, not patched.</p>'],
+    ['What the rules pass flagged','<ul><li>Row 3, "per-label fee": source dated May. Stale.</li><li>Row 6, "free returns portal": true for Sendwell, unverified for the competitor. Needs a screenshot with a date or the cell says "not published."</li><li>Intro line: "half the price" is a savings figure with no comparison shown. Out.</li></ul>']]},
+  email3:{path:C+'upkeep/onboarding-email-3.md',title:'Onboarding email 3 of 5',fm:'surface: email\nstatus: flagged\ntrigger: B\nfact: carriers.list\nlast_checked: 2026-09-09\nnext: add DHL to the carrier sentence, check the subject line still fits',s:[
+    ['What the sweep found','<p>facts.md lists five carriers since Aug 30. The email says "four carriers, one rate table" and names USPS, UPS, FedEx and Canada Post. One sentence carries the fact, so one sentence changes.</p>'],
+    ['Watch','<p>The subject line is "Four carriers, one login." Changing the count changes the subject. Flag for the writer rather than patch silently.</p>']]},
+  returns:{path:C+'upkeep/how-returns-work.md',title:'How returns work',fm:'surface: help\nstatus: in-review\ntrigger: A\nrule: policy.refund-window\nlast_checked: 2026-09-04\nreviewer: founder\nnext: approve draft 2 or send notes by Sep 12',s:[
+    ['Why it is Trigger A','<p>The refund window moved from 14 to 30 days on Sep 3. A policy change is a rule change: every sentence that assumes the old window is suspect, so the whole article was reread.</p>'],
+    ['Draft 2','<p>Six sentences changed. The example timeline was rebuilt around 30 days. The line "most stores refund within a week" was a claim with no source and is out.</p>']]},
+  terms:{path:C+'upkeep/terms-summary.md',title:'Terms summary',fm:'surface: site\nstatus: in-review\ntrigger: A\nrule: policy.refund-window\nlast_checked: 2026-09-04\nreviewer: legal\nnext: legal review Thursday Sep 12',s:[
+    ['What changed','<p>The plain-language summary of the terms names the refund window in two places. Both updated to 30 days. Because the summary is a legal surface, the draft goes to legal, not the founder.</p>']]},
+  duties:{path:C+'upkeep/international-duties.md',title:'International duties',fm:'surface: help\nstatus: revisions-pending\ntrigger: B\nfact: eu.low-value-threshold\nlast_checked: 2026-09-02\nwaiting_on: ops lead\nnext: confirm the threshold figure, then publish',s:[
+    ['What the sweep found','<p>The article states a low-value threshold figure for EU imports. facts.md was corrected on Sep 1 but the new figure is marked unconfirmed. The desk will not publish a figure the facts file does not stand behind.</p>'],
+    ['Status','<p>Revisions written. Waiting on one number from the ops lead. Also listed in Pipeline as a draft.</p>']]},
+  home:{path:C+'upkeep/home-page.md',title:'Home page',fm:'surface: site\nstatus: approved\ntrigger: none\nlast_checked: 2026-09-08\nnext: monthly rules pass Oct 1',s:[
+    ['Last pass','<p>Rules pass clean on Sep 8. No figures, no dates, no competitor names on the page, so the fact sweep has nothing to check. Words list clean. One "simple" allowed under house rules.</p>']]},
+  perlabel:{path:C+'upkeep/why-we-do-not-charge-per-label.md',title:'Why we do not charge per label',fm:'surface: blog\nstatus: complete\ntrigger: none\npublished: 2026-07-14\nlast_checked: 2026-09-08',s:[
+    ['Last pass','<p>Complete: published, checked, nothing outstanding. Carries one competitor pricing claim with a dated source from Sep 9, so it is on the monthly competitor recheck list.</p>']]},
+  'pl-landing':{path:C+'pipeline/returns-portal-landing.md',title:'Returns portal landing page',fm:'surface: site\nstage: brief\ndue: 2026-09-25\nprogram: returns-portal\ncampaign: growth-returns-portal\nwaiting_on: two product screenshots',s:[
+    ['Brief','<p>Written from the campaign brief. One argument: a return that costs the store nothing to process is a return the store can afford to offer. Headline is open until the plan decision (see Open decisions).</p>'],
+    ['Next','<p>Product owes two screenshots of the portal. Draft 1 starts when they land.</p>']]},
+  'pl-q4':{path:C+'pipeline/q4-launch-announcement.md',title:'Q4 launch announcement',fm:'surface: email, blog\nstage: draft\ndraft: 2\ndue: 2026-09-18\nprogram: returns-portal',s:[
+    ['Notes on draft 2','<p>The headline still leads with the feature ("Introducing the returns portal"). House rules say lead with what the reader does next. Rewrite to the behavior: "Let customers return without emailing you."</p>']]},
+  'pl-marrow':{path:C+'pipeline/customer-story-marrow.md',title:'Customer story: Marrow Ceramics',fm:'surface: blog\nstage: review\ndue: 2026-09-15\ncampaign: story-quotes\napprover: customer, then founder',s:[
+    ['Status','<p>Draft approved internally Sep 9. Quote approval sent to the customer Sep 10. Every figure in the story came from the customer and is marked as their claim, not ours.</p>']]},
+  'pl-duties':{path:C+'pipeline/help-international-duties.md',title:'Help: international duties',fm:'surface: help\nstage: draft\ndue: 2026-09-16\nlinked: upkeep/international-duties.md',s:[
+    ['Status','<p>Rewrite of the existing help article. Blocked on the same figure as the upkeep item. Publishes the day the ops lead confirms.</p>']]},
+  'pl-linkedin':{path:C+'pipeline/linkedin-what-shipping-costs.md',title:'LinkedIn series: what shipping costs',fm:'surface: social\nstage: approved\nposts: 6\ndue: 2026-09-22\nschedule: Tue, Thu',s:[
+    ['Status','<p>Six posts approved Sep 9. Each carries one figure and one source. Scheduling Tuesdays and Thursdays from Sep 16.</p>']]},
+  house:{path:C+'house-rules.md',title:'House rules',fm:'client: sendwell\npacks: [blog]\napprover: founder\nsilence_is_consent: 48h\nreview_depth: full\nupdated: 2026-08-30',s:[
+    ['The business','<p>Sendwell. Shipping labels and a returns portal for small online stores. Sold to the store owner, used by whoever packs the orders.</p>'],
+    ['Who buys and who influences','<p>Primary actors: store owners doing 50 to 2,000 orders a month. Secondary: the ops lead who prints the labels and the accountant who sees the bill. Key communicators: Shopify app reviewers, two shipping newsletters the owners already read.</p>'],
+    ['Words','<p>Preferred: label, order, store, carrier, rate. Banned: seamless, effortless, supercharge, unlock, empower, solution.</p>'],
+    ['Appeals','<p>Allowed: self-interest in gain framing, legitimacy, bandwagon with real numbers. No fear framing. No manufactured urgency.</p>'],
+    ['Claims','<p>Never: cheapest, guaranteed delivery. Needs proof on the page: any delivery time, any savings figure, any competitor comparison.</p>']]},
+  voice:{path:C+'brand/voice.md',title:'Voice',fm:'updated: 2026-08-30\nsource: founder interview, 40 published pieces',s:[
+    ['In one line','<p>Write like the person who has printed ten thousand labels and is not impressed by any of them.</p>'],
+    ['What that means','<ul><li>Say the number. "Saves money" is not a sentence here; "$0.40 a label" is.</li><li>Short sentences for facts, longer ones for reasons.</li><li>No exclamation marks. Ever.</li><li>Address the store owner as "you." Never "merchants."</li></ul>']]},
+  words:{path:C+'brand/words.md',title:'Words',fm:'updated: 2026-08-30\nchecked_by: rules pass, monthly',s:[
+    ['Preferred','<p>label, order, store, carrier, rate. Use these over their synonyms: not "shipment," not "merchant," not "shop," not "courier."</p>'],
+    ['Banned','<p>seamless, effortless, supercharge, unlock, empower, solution. The rules pass flags any of them on any live piece.</p>'],
+    ['Allowed once per piece','<p>simple, fast, easy. More than once and the piece is arguing instead of showing.</p>']]},
+  claims:{path:C+'brand/claims.md',title:'Claims',fm:'updated: 2026-08-30\npack: blog adds sourcing and SEO basics; the comparison and pricing rules are the client\'s own',s:[
+    ['Needs proof on the page','<ul><li>Any delivery time: a carrier source, dated.</li><li>Any savings figure: the comparison shown, both numbers.</li><li>Competitor pricing: dated source, rechecked monthly.</li></ul>'],
+    ['Never','<p>"Cheapest." "Guaranteed delivery." Any claim about what a competitor will do next.</p>']]},
+  camp1:{path:C+'campaigns/first-label-48h.md',title:'Get 60 trial stores to print a first label within 48 hours',fm:'objective: 60 trial stores print a first label within 48h, October\nbaseline: 31 of 140, August\nsusceptibility: 4\nstage: live\ncheckpoint: 2 of 3, Sep 19',s:[
+    ['Objective','<p>Sixty trial stores print their first label inside 48 hours of signup, in the month of October. Baseline: 31 of 140 trials in August. Countable, observable in the product log.</p>'],
+    ['Audience','<p>Primary actors: store owners in trial. Effectiveness 5, they control the behavior entirely. Secondary: the ops lead, when there is one. Key communicator: the Shopify app reviewer whose write-up brought them here.</p>'],
+    ['Current behavior','<p>They sign up, look at the rates screen, and leave to compare with what they pay now. What that gives them: the feeling of having checked. Immediate. What we ask for costs them a package and a printer.</p>'],
+    ['Susceptibility: 4','<p>Low perceived risk, immediate reward if the first label is cheaper than their current one. Message-led series is right. Media spend justified.</p>'],
+    ['The argument','<p>Printing one label today will show you your real rate on a package you actually ship, which the rates screen cannot.</p>'],
+    ['Series','<p>Three products. Checkpoint 1 passed Sep 5 (in-app prompt, 19 of 44). Checkpoint 2 Sep 19 (email 2). Go/no-go on media at checkpoint 2.</p>']]},
+  camp2:{path:C+'campaigns/growth-returns-portal.md',title:'Get 25 Growth customers to switch on the returns portal',fm:'objective: 25 Growth customers enable the portal by Nov 15\nbaseline: 0 (feature not yet live)\nsusceptibility: 2\nstage: pretest\npretest: 6 customers, Sep 23',s:[
+    ['Why susceptibility is 2','<p>Growth customers already handle returns by email and it works well enough. The reward for switching is distant, the perceived risk is a customer-facing change. Low susceptibility means the message is not the lever.</p>'],
+    ['What to change instead','<p>The offer: first 90 days of portal fees waived. The product: one-click enable with the store\'s existing return policy pre-filled. Pretest both with six customers before writing anything for the list.</p>']]},
+  camp3:{path:C+'campaigns/story-quotes.md',title:'Get 12 customers to give a quote for a story page',fm:'objective: 12 usable customer quotes by Sep 30\nbaseline: 2\nsusceptibility: 5\nstage: evaluation\nresult_so_far: 9 in, 3 pending',s:[
+    ['Evaluation','<p>Nine quotes in, three pending. Two arrived from the in-app prompt, seven from a personal email from the founder. The email did the work; the prompt did not.</p>'],
+    ['What else moved the number','<p>A LinkedIn post from a customer on Sep 2, unprompted, brought two of the nine. Logged so the result is not credited to the series alone.</p>']]},
+  'sc-fact':{path:C+'schedule.md#fact-sweep',title:'Fact sweep',fm:'when: Mondays 08:00\ntier: fast\nreads: facts.md, every live piece\nwrites: upkeep/*.md status and last_checked\nlast_run: 2026-09-08',s:[
+    ['What it does','<p>Compares every figure, name and date on every live piece against facts.md, and reads the SEO fields in each piece\'s front matter on the same pass, so a stale meta description is flagged like any other stale fact. A mismatch sets the piece to flagged with trigger B and names the fact. Mechanical, so it runs on the fast tier.</p>']]},
+  'sc-rules':{path:C+'schedule.md#rules-pass',title:'Rules pass',fm:'when: 1st of month\ntier: standard\nreads: house-rules.md, brand/, packs/blog\nlast_run: 2026-09-01\nnext_run: 2026-10-01',s:[
+    ['What it does','<p>Checks words, claims and register on every live piece, client rules first, then the pack. Banned word: flag. Unsourced claim: flag with trigger A. Register mismatch: note, not flag.</p>']]},
+  'sc-pricing':{path:C+'schedule.md#pricing-check',title:'Pricing page check',fm:'when: on change to pricing.md\ntier: fast\nreads: pricing.md, every piece tagged fact:plans.*\nlast_run: 2026-09-09',s:[
+    ['What it does','<p>Fires when pricing.md changes. Lists every piece that carries a plan price and checks each. On Sep 9 it found the $49 on the pricing page and cleared the other four pieces.</p>']]},
+  'sc-comp':{path:C+'schedule.md#competitor-recheck',title:'Competitor recheck',fm:'when: monthly, 9th\ntier: standard\nreads: every claim tagged competitor\nlast_run: 2026-09-09',s:[
+    ['What it does','<p>Every competitor claim needs a source dated within 30 days. Stale source: flag with trigger A. Two pieces carry competitor claims today; one is flagged.</p>']]},
+  'sc-claims':{path:C+'schedule.md#claims-review',title:'Claims review',fm:'when: quarterly\ntier: strongest\nreads: every live piece\nlast_run: 2026-07-01\nnext_run: 2026-10-01',s:[
+    ['What it does','<p>Reads every claim on every live piece as a journalist would: is it true, is it proven on the page, would a competitor dispute it. Judgment work, so it runs on the strongest tier available.</p>']]},
+  'pr-brief':{path:C+'programs/returns-portal/launch-brief.md',title:'Launch brief',fm:'status: approved\napproved: 2026-09-03\nlaunch: 2026-10-07\nowner: founder',s:[
+    ['The launch in one paragraph','<p>The returns portal lets a store\'s customers start a return without emailing the store. Ships Oct 7. Announcement email, landing page, help article, in-app banner and FAQ, in that order of importance.</p>']]},
+  'pr-emails':{path:C+'programs/returns-portal/announcement-emails.md',title:'Announcement email sequence',fm:'status: draft\nemails: 3\ndue: 2026-09-18\nlinked: pipeline/q4-launch-announcement.md',s:[
+    ['Sequence','<ul><li>Email 1, launch day: what it is, one screenshot, the enable button.</li><li>Email 2, day 4: one customer already using it, with numbers.</li><li>Email 3, day 10: to stores that have not enabled it. The offer.</li></ul>']]},
+  'pr-help':{path:C+'programs/returns-portal/help-setup.md',title:'Help center: setting up the portal',fm:'status: not-started\nsurface: help\nwaiting_on: final settings screen',s:[
+    ['Status','<p>Cannot be written until the settings screen is final. Product says Sep 24.</p>']]},
+  'pr-banner':{path:C+'programs/returns-portal/in-app-banner.md',title:'In-app banner',fm:'status: approved\nsurface: in-app\nchars: 90',s:[
+    ['Copy','<p>"Customers can now start returns themselves. Turn on the returns portal." Ninety characters. Approved Sep 8.</p>']]},
+  'pr-faq':{path:C+'programs/returns-portal/faq.md',title:'FAQ',fm:'status: draft\nsurface: site\nquestions: 7\nblocked_on: decisions 1 and 2',s:[
+    ['Status','<p>Seven questions drafted. Two answers depend on the open decisions and are marked TBD in the draft.</p>']]},
+  'pr-d1':{path:C+'programs/returns-portal/decisions.md#1',title:'Which plans get the portal?',fm:'owner: product\ndue: 2026-09-17\nblocks: landing page headline, email 3 audience, FAQ q2',s:[
+    ['The question','<p>Does the portal ship on Growth only or on all plans? If Growth only, the landing page headline sells an upgrade and email 3 goes to Starter stores. If all plans, both change.</p>']]},
+  'pr-d2':{path:C+'programs/returns-portal/decisions.md#2',title:'When is the returns fee shown?',fm:'owner: product\ndue: 2026-09-20\nblocks: FAQ q5, help article',s:[
+    ['The question','<p>Is the returns fee shown before or after the customer chooses a carrier? Decides the FAQ wording and the order of steps in the help article.</p>']]}
+};
+const tabs=[...document.querySelectorAll('.tab')], panels=[...document.querySelectorAll('.panel')];
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('on',x===t));panels.forEach(p=>p.classList.toggle('on',p.id==='p-'+t.dataset.p));}));
+const drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim'),dpath=document.getElementById('dpath'),dbody=document.getElementById('dbody');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function openDoc(k){const d=DOCS[k];if(!d)return;dpath.textContent=d.path;
+  dbody.innerHTML='<h3>'+esc(d.title)+'</h3><h4>Front matter</h4><pre>'+esc(d.fm)+'</pre>'+d.s.map(([h,b])=>'<h4>'+esc(h)+'</h4>'+b).join('');
+  dbody.scrollTop=0;drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');}
+function closeDoc(){drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');}
+document.querySelectorAll('[data-doc]').forEach(el=>{el.setAttribute('tabindex','0');el.setAttribute('role','button');
+  el.addEventListener('click',e=>{e.preventDefault();openDoc(el.dataset.doc);});
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDoc(el.dataset.doc);}});});
+document.getElementById('dclose').addEventListener('click',closeDoc);scrim.addEventListener('click',closeDoc);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDoc();});
+
+/* ===================== content desk ===================== */
+const CD={
+ pricing:{title:'Pricing that stays out of your way',st:'flagged',stl:'flagged',url:'sendwell.com/pricing',path:'upkeep/pricing-page.md',
+  body:'<p>One flat rate for labels and returns. The Growth plan is <mark>$49</mark> a month, and the price never moves with your volume.</p><p>Print from any carrier at the rate we negotiated, see the label cost before you buy it, and let customers start their own returns.</p>',
+  seo:[['Title tag','44 / 60','Sendwell pricing for shipping and returns',0],['Meta description','carries $49','Print labels and run returns for one flat rate. Growth is $49 a month.',1,'Flagged by the fact sweep. Fix it with the body, then republish.'],['Focus keyword','','shipping software pricing',0],['llms.txt pillar','','Pricing',0]],
+  schema:['Product + FAQPage from the FAQ block','{\n  "@type": "Product",\n  "name": "Sendwell Growth",\n  "offers": { "price": "59.00" }\n}\n{\n  "@type": "FAQPage",\n  "mainEntity": [ 3 questions ]\n}'],
+  checks:[['Slug unique · title tag within sixty','pass'],['Banned words on the page','none'],['Meta description matches the facts file','fails'],['Every claim sourced','fails']],
+  rec:'surface: site\nstatus: flagged · trigger B\nfact: plans.growth.price\nlast_checked: 2026-09-09\npublished: 2026-03-02\nnext: fix the three places that carry the price',
+  pub:'Publish · blocked by 2 checks',ready:false},
+ vs:{title:'Sendwell vs. ShipStation, priced honestly',st:'flagged',stl:'flagged',url:'sendwell.com/vs/shipstation',path:'upkeep/sendwell-vs-shipstation.md',
+  body:'<p>Every row of this comparison is a claim, so every row carries a dated source. The competitor changed its per-label pricing on Sep 3, which is why the whole page is being reread instead of patched.</p>',
+  seo:[['Title tag','38 / 60','Sendwell vs. ShipStation on price',0],['Meta description','142 / 155','A row by row comparison of label costs, returns fees and monthly pricing, with dated sources for every number.',0],['Focus keyword','','shipstation alternative',0],['llms.txt pillar','','Comparisons',0]],
+  schema:['Article','{\n  "@type": "Article",\n  "headline": "Sendwell vs. ShipStation",\n  "dateModified": "2026-09-09"\n}'],
+  checks:[['Slug unique · title tag within sixty','pass'],['Banned words on the page','none'],['Competitor claims within 30-day sources','fails'],['Every claim sourced','fails']],
+  rec:'surface: site\nstatus: flagged · trigger A\nrule: claims.competitor-pricing\nlast_checked: 2026-09-09\nnext: fresh dated source for every row, or the row comes out',
+  pub:'Publish · blocked by 2 checks',ready:false},
+ home:{title:'Shipping software for stores that ship',st:'approved',stl:'published',url:'sendwell.com',path:'upkeep/home-page.md',
+  body:'<p>Rules pass clean on Sep 8. No figures, no dates, no competitor names on the page, so the fact sweep has nothing to check here.</p>',
+  seo:[['Title tag','52 / 60','Sendwell, shipping and returns for small stores',0],['Meta description','128 / 155','Labels, rates and returns for small online stores, at one flat monthly price, from the people who print their own.',0],['Focus keyword','','shipping software for small stores',0],['llms.txt pillar','','Home',0]],
+  schema:['Organization + WebSite','{\n  "@type": "Organization",\n  "name": "Sendwell"\n}\n{\n  "@type": "WebSite",\n  "url": "https://sendwell.com"\n}'],
+  checks:[['Slug unique · title tag within sixty','pass'],['Banned words on the page','none'],['Meta description matches the facts file','pass'],['Every claim sourced','pass']],
+  rec:'surface: site\nstatus: approved\nlast_checked: 2026-09-08\nnext: monthly rules pass Oct 1',
+  pub:'Republish',ready:true},
+ returns:{title:'How returns work',st:'review',stl:'in review',url:'help.sendwell.com/returns',path:'upkeep/how-returns-work.md',
+  body:'<p>The refund window moved from 14 to 30 days on Sep 3, so the whole article was reread. Six sentences changed and the example timeline was rebuilt. Draft 2 is waiting on the founder.</p>',
+  seo:[['Title tag','24 / 60','How returns work',0],['Meta description','121 / 155','What happens when a customer starts a return, step by step, from the request to the refund landing in their account.',0],['Focus keyword','','how returns work',0],['llms.txt pillar','','Help',0]],
+  schema:['HowTo + FAQPage','{\n  "@type": "HowTo",\n  "name": "How returns work",\n  "step": [ 5 steps ]\n}'],
+  checks:[['Slug unique · title tag within sixty','pass'],['Banned words on the page','none'],['Meta description matches the facts file','pass'],['Draft approved by the founder','fails']],
+  rec:'surface: help\nstatus: in-review · trigger A\nrule: policy.refund-window\nreviewer: founder\nnext: approve draft 2 or send notes by Sep 12',
+  pub:'Publish · blocked by 1 check',ready:false},
+ email3:{title:'Onboarding email 3 of 5: Four carriers, one login',st:'flagged',stl:'flagged',url:'onboarding sequence · email 3',path:'upkeep/onboarding-email-3.md',
+  body:'<p>The facts file lists five carriers since Aug 30, and this email says <mark>four carriers, one rate table</mark>. One sentence carries the fact, so one sentence changes. The subject line carries the count too, so it is flagged for you rather than patched silently.</p>',
+  seo:[['Subject line','26 / 50','Four carriers, one login',1,'The carrier count changed. A new subject needs your call.'],['Preheader','64 / 90','Every rate we have negotiated, visible before you buy the label.',0],['Audience','','trial stores, day 4',0]],
+  schema:['None — email surface','Email records skip page schema. The rules pass still checks words, claims and register.'],
+  checks:[['Banned words in the email','none'],['Carrier count matches the facts file','fails'],['Every claim sourced','pass']],
+  rec:'surface: email\nstatus: flagged · trigger B\nfact: carriers.list\nlast_checked: 2026-09-09\nnext: add DHL, decide the subject line',
+  pub:'Publish · blocked by 1 check',ready:false},
+ perlabel:{title:'Why we do not charge per label',st:'approved',stl:'published',url:'sendwell.com/blog/why-we-do-not-charge-per-label',path:'upkeep/why-we-do-not-charge-per-label.md',
+  body:'<p>Published in July, checked last week. Carries one competitor pricing claim with a dated source from Sep 9, so it sits on the monthly competitor recheck list.</p>',
+  seo:[['Title tag','31 / 60','Why we do not charge per label',0],['Meta description','119 / 155','Per-label pricing punishes the stores that grow. Here is the math behind our flat rate, with the comparison shown.',0],['Focus keyword','','per label pricing',0],['llms.txt pillar','','Pricing',0]],
+  schema:['BlogPosting + FAQPage','{\n  "@type": "BlogPosting",\n  "datePublished": "2026-07-14",\n  "dateModified": "2026-09-08"\n}'],
+  checks:[['Slug unique · title tag within sixty','pass'],['Banned words on the page','none'],['Meta description matches the facts file','pass'],['Every claim sourced','pass']],
+  rec:'surface: blog\nstatus: complete\npublished: 2026-07-14\nlast_checked: 2026-09-08',
+  pub:'Republish',ready:true},
+ marrow:{title:'Marrow Ceramics ships 400 orders a month with one person',st:'revisions',stl:'draft',url:'not published yet',path:'pipeline/customer-story-marrow.md',
+  body:'<p>Draft approved internally Sep 9. Quote approval went to the customer Sep 10. Every figure in the story came from the customer and is marked as their claim, not ours.</p>',
+  seo:[['Title tag','57 / 60','How Marrow Ceramics ships 400 orders with one person',0],['Meta description','empty','',1,'Written at publish time, checked against the facts file like everything else.'],['Focus keyword','','shipping case study',0],['llms.txt pillar','','Stories',0]],
+  schema:['Article','{\n  "@type": "Article",\n  "about": "customer story"\n}'],
+  checks:[['Slug unique · title tag within sixty','pass'],['Banned words on the page','none'],['Meta description present','fails'],['Customer quote approved','fails']],
+  rec:'surface: blog\nstage: review\ndue: 2026-09-15\napprover: customer, then founder',
+  pub:'Publish · blocked by 2 checks',ready:false}
+};
+let cdKey='pricing', cdTab='seo';
+const cdRecs=[...document.querySelectorAll('.cd-rec')], cdITabs=[...document.querySelectorAll('.cd-itabs button')];
+function cdField(f){const [l,c,v,bad,hint]=f;return '<div class="cd-f"><div class="lab"><span>'+l+'</span>'+(c?'<span class="cnt'+(bad?' bad':'')+'">'+c+'</span>':'')+'</div><div class="val'+(bad?' bad':'')+'">'+(esc(v)||'&nbsp;')+'</div>'+(hint?'<div class="hint">'+hint+'</div>':'')+'</div>';}
+function cdChecks(r){return '<div class="cd-f"><div class="lab"><span>What Publish checks</span></div><ul class="cd-checks">'+r.checks.map(([k,s])=>'<li>'+k+' <span class="'+(s==='fails'?'no':'ok')+'">'+s+'</span></li>').join('')+'</ul></div>';}
+function cdRender(){
+  const r=CD[cdKey]; if(!r)return;
+  document.getElementById('cd-title').textContent=r.title;
+  document.getElementById('cd-meta').innerHTML='<span class="st '+r.st+'">'+r.stl+'</span><span>'+r.url+'</span><span>'+r.path+'</span>';
+  document.getElementById('cd-body').innerHTML=r.body;
+  const b=document.getElementById('cd-ibody');
+  if(cdTab==='seo') b.innerHTML=r.seo.map(cdField).join('')+cdChecks(r);
+  else if(cdTab==='schema') b.innerHTML='<div class="cd-f"><div class="lab"><span>Schema type</span></div><div class="val">'+r.schema[0]+'</div></div><div class="cd-f"><div class="lab"><span>JSON-LD, written at publish</span></div><pre>'+esc(r.schema[1])+'</pre></div>';
+  else if(cdTab==='publishing') b.innerHTML='<div class="cd-f"><div class="lab"><span>URL</span></div><div class="val">'+r.url+'</div></div>'+cdChecks(r)+'<div class="cd-f"><div class="hint">When every check passes, Publish writes the finished page with the meta tags and the JSON-LD in it, and the record keeps its published date.</div></div>';
+  else b.innerHTML='<div class="cd-f"><div class="lab"><span>'+r.path+'</span></div><pre>'+esc(r.rec)+'</pre></div><div class="cd-f"><div class="hint">This is the file itself: markdown with front matter, in the client folder. Edit it in anything and the desk re-renders.</div></div>';
+  const pb=document.getElementById('cd-pub'); pb.textContent=r.pub; pb.classList.toggle('ready',r.ready);
+}
+cdRecs.forEach(el=>el.addEventListener('click',()=>{cdKey=el.dataset.r;cdRecs.forEach(x=>x.classList.toggle('sel',x===el));cdRender();}));
+cdITabs.forEach(el=>el.addEventListener('click',()=>{cdTab=el.dataset.i;cdITabs.forEach(x=>x.classList.toggle('on',x===el));cdRender();}));
+cdRender();
+</script>
+</body>
+</html>
